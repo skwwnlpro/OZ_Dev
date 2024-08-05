@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>채팅방 만들기</title>
+    <style>
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+      }
+      .half-container {
+        width: 48%; /* 100% - 2% (간격) */
+        box-sizing: border-box;
+        padding: 1%;
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2%; /* 선의 너비 */
+        background-color: black; /* 선의 색상 */
+      }
+    </style>
+    <link href="chat.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 왼쪽 반 -->
+      <div class="half-container">
+        <main class="chat-screen">
+          <section class="chat-screen_bar">
+            <div class="user">
+              <div class="user__column">
+                <div class="user__pic"></div>
+              </div>
+              <div class="user__column">
+                <p class="user__nick">참여자</p>
+                <p class="user__count">30 명</p>
+              </div>
+            </div>
+          </section>
+        </main>
+        <form class="chat-form">
+          <section class="chat-form__field">
+            <textarea class="chat-form__msg"></textarea>
+            <input type="submit" value="보내기" class="chat-form__bt" />
+          </section>
+        </form>
+      </div>
+
+      <!-- 오른쪽 반 -->
+      <div class="half-container">
+        <main class="chat-screen">
+          <section class="chat-screen_bar">
+            <div class="user">
+              <div class="user__column">
+                <div class="user__pic"></div>
+              </div>
+              <div class="user__column">
+                <p class="user__nick">참여자</p>
+                <p class="user__count">20 명</p>
+              </div>
+            </div>
+          </section>
+        </main>
+        <form class="chat-form">
+          <section class="chat-form__field">
+            <textarea class="chat-form__msg"></textarea>
+            <input type="submit" value="보내기" class="chat-form__bt" />
+          </section>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

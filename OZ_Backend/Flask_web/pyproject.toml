@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "flask_web"
+version = "0.1.0"
+description = ""
+authors = ["skwwnlpro <skwwnlpro@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.3"
+flask-smorest = "^0.44.0"
+api = "^0.0.7"
+flask-mysqldb = "^2.0.0"
+flask-sqlalchemy = "^3.1.1"
+pymysql = "^1.1.1"
+sqlalchemy = "^2.0.31"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

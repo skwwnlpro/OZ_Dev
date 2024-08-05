@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>설문조사 양식</title>
+  </head>
+  <body>
+    <h1>설문조사 양식</h1>
+    <ul>
+      <li><a href="https://www.naver.com"> 개인 정보</a></li>
+      <li><a href="https://www.naver.com"> 설문 문항</a></li>
+      <li><a href="https://www.naver.com"> 기타</a></li>
+    </ul>
+    <h2>개인 정보</h2>
+    <label>이름:<input type="text" /></label>
+    <br />
+    <label>나이:<input type="number" /></label>
+    <br />
+    <label>성별:</label>
+    <select id="gender" name="gender">
+      <option value="male">남성</option>
+      <option value="female">여성</option>
+      <option value="other">기타</option>
+    </select>
+    <br />
+    <label>이메일:</label>
+    <input type="text" />
+
+    <h2>설문 문항</h2>
+    <p>당신의 관심사를 선택해주세요:</p>
+
+    <ul>
+      <li><input type="checkbox" />스포츠</li>
+      <li><input type="checkbox" />음악</li>
+      <li><input type="checkbox" />영화</li>
+    </ul>
+    
+    <label>피드백:</label>
+    <textarea cols="60" rows="5"></textarea>
+
+    <br>
+
+    <button>호출</button>
+
+    <br>
+
+    <span>&copy;</span> 2024 설문조사 양식
+
+  </body>
+</html>

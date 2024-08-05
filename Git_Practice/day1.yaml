@@ -1,0 +1,8 @@
+- [ ]  git config —global user.name
+- [ ]  git config —global user.email
+- [ ]  git init
+- [ ]  git status
+- [ ]  .gitignore
+- [ ]  git add .
+- [ ]  git commit
+- [ ]  git log

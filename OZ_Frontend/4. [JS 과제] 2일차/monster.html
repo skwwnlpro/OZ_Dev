@@ -1,0 +1,64 @@
+<!-- 2회차 과제
+
+데미지가 깎이다가 HP가 0보다 작아졌을 때에는
+HP에 강제로 0을 대입하는 코드를 추가해보자!
+그러면 데미지가 음수로 출력되는 상황은 나오지 않는다. -->
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>몬스터 잡기 게임</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      let monsterHP = 100;
+      // document.getElementById는 id(여기선 container) 속성 값으로 요소를 선택하는 DOM 메소드
+      const container = document.getElementById("container");
+      // h1 이라는 HTML 요소를 만들어 반환
+      const h1 = document.createElement("h1");
+      // h1 Node가 포함하는 textContent를 표현
+      h1.textContent = "몬스터 잡기 게임을 시작합니다.!";
+      container.appendChild(h1);
+
+      let attackDamage = parseInt(prompt("1회 공격시 데미지는? (양의 정수)"));
+      let attackCount = 0;
+
+      if (attackDamage > 0) {
+        while (monsterHP > 0) {
+          monsterHP -= attackDamage;
+          attackCount += 1;
+
+          const p = document.createElement("p");
+          p.textContent = `몬스터를 ${attackCount}회 공격했다!`;
+          container.append(p);
+
+          // 마지막 공격에 HP가 음수가 되었을 경우 0으로 출력
+          if (monsterHP < 0) {
+            monsterHP = 0;
+          }
+
+          const strong = document.createElement("strong");
+          strong.textContent = `몬수터의 남은 HP는 ${monsterHP}입니다!`;
+          container.append(strong);
+        }
+
+        const h2 = document.createElement("h2");
+        h2.textContent = "몬스터 잡기 완료! 수고하셨습니다~!";
+        h2.style.color = "orange";
+        h2.title = "게임을 다시 시작하고 싶으면 새로고침";
+        container.appendChild(h2);
+      } else {
+        // 양수 이외의 값을 처리하기 위한 조건문
+        alert("데미지를 잘못 입력하여 게임을 취소합니다!");
+      }
+    </script>
+  </body>
+</html>
