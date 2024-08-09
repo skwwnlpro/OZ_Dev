@@ -11,15 +11,21 @@ res = requests.get(url, headers=headers)
 html = res.text
 soup = BeautifulSoup(html, "html.parser")
 
+lst50 = soup.select(".lst50")  # 50개
+lst100 = soup.select(".lst100")  # 50개
+lst_all = lst50 + lst100
+
+lst_all = soup.find_all(class_=["lst50", "lst100"])
+lst_all = soup.select(".lst50, .lst100")
+
 wraps = soup.select("tr[data-song-no]")
 
 
-for wrap in wraps:
+for rank, i in enumerate(lst_all, 1):
 
-    rank = wrap.select_one(".rank").text
-    title = wrap.select_one(".ellipsis.rank01 a").text
-    artist = wrap.select_one(".ellipsis.rank02 a").text
-    album = wrap.select_one(".ellipsis.rank03 a").text
+    title = i.select_one(".ellipsis.rank01 a").text
+    artist = i.select_one(".ellipsis.rank02 a").text
+    album = i.select_one(".ellipsis.rank03 a").text
 
     print(f"순위 : {rank}")
     print(f"노래 제목 : {title}")
