@@ -1,4 +1,4 @@
-cssCopy code
+code
 body {
     font-family: Arial, sans-serif;
 }
@@ -24,3 +24,4 @@ table, th, td {
 th, td {
     padding: 8px;
     text-align: left;
+}
