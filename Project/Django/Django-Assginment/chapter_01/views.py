@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from fake_db import user_db
+from .fake_db import user_db
 
 
 # Create your views here.

@@ -40,10 +40,16 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
+    "chapter_02",
     "chapter_01",
+    "bookmark",
 ]
 
-INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS
+THIRD_PARTY_APPS = [
+    "django_extensions",
+]
+
+INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
