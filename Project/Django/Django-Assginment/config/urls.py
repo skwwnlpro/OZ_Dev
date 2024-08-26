@@ -18,11 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from chapter_01.views import user_info, user_list
-from chapter_02.views import todo_list, todo_info
+# from chapter_01.views import user_info, user_list
+# from chapter_02.views import todo_list, todo_info
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("users/", include("chapter_01.urls")),
     path("todo/", include("chapter_02.urls")),
+    path("accounts/", include("users.urls")),
 ]

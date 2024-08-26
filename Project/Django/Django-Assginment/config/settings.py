@@ -43,11 +43,15 @@ CUSTOM_APPS = [
     "chapter_02",
     "chapter_01",
     "bookmark",
+    "users",
 ]
 
 THIRD_PARTY_APPS = [
     "django_extensions",
 ]
+
+LOGIN_URL = "/accounts/login"
+LOGIN_REDIRECT_URL = "/todo"
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
