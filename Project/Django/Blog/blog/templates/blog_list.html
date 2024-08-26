@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {# 로그인 및 유저 정보를 우측 최상단으로 이동 #}
+    <nav>
+        <div style="text-align: right">
+            {% if request.user.is_authenticated %} {# if문을 사용해서 로그인 되었을 때만 로그아웃 버튼 활성화 #}
+
+            {#  로그아웃은 Post 요청입니다. form을 활용합니다. #}
+                <form action="{%  url 'logout' %}" method="POST" style="display: inline">
+                    {% csrf_token %}
+                    <button>로그아웃</button>
+                </form>
+                {{ request.user.username }}
+
+            {% else %}
+             <a href="{%  url 'login' %}">로그인</a>
+
+            {% endif %}
+        </div>
+
+    </nav>
+
+
+    <h1>블로그 목록</h1>
+    <h3>{{ request.user.username }}</h3> # 추가
+    {% for blog in blogs %}
+        <p>
+            <a href="{% url 'blog_detail' blog.pk %}">
+                {{ blog.title }} - <small>{{ blog.created_at | date:"Y-m-d"}}</small>
+            </a>
+        </p>
+    {%  endfor %}
+</body>
+</html>
