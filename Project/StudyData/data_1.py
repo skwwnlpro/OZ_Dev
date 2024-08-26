@@ -41,7 +41,7 @@ def check_color(colors):
 print(check_color(homes_colors))
 
 
-# -----------------
+# -----------------정답-----------------
 
 
 import sys
