@@ -50,11 +50,9 @@ THIRD_PARTY_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APP + THIRD_PARTY_APPS
 
-LOGIN_URL = "/accounts/login/"
-
-LOGIN_REDIRECT_URL = (
-    "/admin"  # urls.py 파일을 참고해서 확인해보면 이 경로는 blog_list 페이지입니다.
-)
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
