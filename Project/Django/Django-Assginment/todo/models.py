@@ -1,8 +1,12 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 
+User = get_user_model() 
+
 # Create your models here.
 class ToDo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
     start_date = models.DateField()

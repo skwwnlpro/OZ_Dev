@@ -1,5 +1,5 @@
 from django.contrib import admin
-from chapter_02.models import ToDo
+from todo.models import ToDo
 
 
 # Register your models here.

@@ -40,7 +40,7 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
-    "chapter_02",
+    "todo",
     "chapter_01",
     "bookmark",
     "users",
