@@ -2,10 +2,11 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 
-User = get_user_model() 
+User = get_user_model()
+
 
 # Create your models here.
-class ToDo(models.Model):
+class Todo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
