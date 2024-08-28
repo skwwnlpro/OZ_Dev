@@ -1,12 +1,21 @@
-from django.contrib import admin
 from django.urls import path
+from todo.cb_views import (
+    TodoListView,
+    TodoCreateView,
+    TodoDetailView,
+    TodoUpdateView,
+    TodoDeleteView,
+)
 
-from todo.views import todo_list, todo_info, todo_create, todo_update, todo_delete
 
 urlpatterns = [
-    path("", todo_list, name="todo_list"),
-    path("<int:todo_id>/", todo_info, name="todo_info"),
-    path("create/", todo_create, name="todo_create"),
-    path("<int:todo_id>/update/", todo_update, name="todo_update"),
-    path("<int:todo_id>/delete/", todo_delete, name="todo_delete"),
+    path(
+        "",
+        TodoListView.as_view(),
+        name="cbv_todo_list",
+    ),
+    path("create/", TodoCreateView.as_view(), name="cbv_todo_create"),
+    path("<int:pk>/", TodoDetailView.as_view(), name="cbv_todo_info"),
+    path("<int:pk>/update/", TodoUpdateView.as_view(), name="cbv_todo_update"),
+    path("<int:pk>/delete/", TodoDeleteView.as_view(), name="cbv_todo_delete"),
 ]
